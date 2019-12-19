@@ -44,6 +44,7 @@
       <target dev='{{ volume.target }}' />
       {% endif %}
     </disk>
+    <rng model="virtio"><backend model="random">/dev/urandom</backend></rng>
 {% endfor %}
 {% for interface in interfaces %}
 {% if interface.type is defined and interface.type == 'direct' %}
